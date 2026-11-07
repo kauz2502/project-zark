@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT ZARK</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  background: #080808;
+  color: #c5c5c5;
+  font-family: monospace;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+h1 {
+  letter-spacing: 8px;
+  font-size: 30px;
+}
+
+p { color: #777; }
+
+input {
+  background: #111;
+  border: 1px solid #555;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  width: 220px;
+  text-align: center;
+}
+
+button {
+  background: #222;
+  border: 1px solid #777;
+  color: white;
+  padding: 15px;
+  margin-top: 12px;
+}
+
+#resultado {
+  margin: 35px auto;
+  max-width: 500px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+<body>
+
+<h1>PROJECT ZARK</h1>
+<p>O conhecimento está oculto.</p>
+<p>Insira sua chave de acesso:</p>
+
+<input id="codigo" placeholder="Digite o código">
+<br>
+<button onclick="verificar()">ACESSAR</button>
+
+<div id="resultado"></div>
+
+<script>
+const mensagens = {
+"3301": "PRIMEIRA MENSAGEM:\n\nVocê encontrou a primeira porta.",
+"7419": "SEGUNDA MENSAGEM:\n\nA resposta nem sempre está onde você procura.",
+"1907": "TERCEIRA MENSAGEM:\n\nObserve os detalhes. Nada foi colocado aqui por acaso."
+};
+
+function verificar() {
+  const codigo = document.getElementById("codigo").value.trim();
+  const resultado = document.getElementById("resultado");
+
+  resultado.textContent = mensagens[codigo] || "ACESSO NEGADO.\nCódigo não reconhecido.";
+}
+</script>
+
+</body>
+</html>
